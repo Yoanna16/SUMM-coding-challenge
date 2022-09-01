@@ -53,7 +53,7 @@ If you want, you can deploy your site for free. Recommended hosts are:
 
 ## Submitting your solution
 
-**You have until noon on August 23rd to submit it.**
+**You have one week to submit your solution.**
 Write me (Nicholas) an email or a message on LinkedIn/Join when you have completed the project, I will review it afterwards.
 
 **Have fun building!** 🚀
