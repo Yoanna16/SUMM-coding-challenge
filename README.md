@@ -35,12 +35,12 @@ There is also a `style-guide.md` file containing the information you'll need, su
 
 ## Building your project
 
-- Fork or clone the project to a public repo of yours
+- Clone the project to a repo of yours, where you can later send me the link to (do not fork it please)
 - Try to commit as you would do in a professional setting because the commits will be reviewed
 - Use code / React best practices
 - Use functional components
-- Use JavaScript ES6+ and optional TypeScript for this project
-- Bonus: Test your code
+- Use JavaScript ES6+ and optional TypeScript (Bonus) for this project
+- Test your code
 - Have fun while coding, do not overthink everything :)
 
 ## Deploying your project
@@ -53,7 +53,6 @@ If you want, you can deploy your site for free. Recommended hosts are:
 
 ## Submitting your solution
 
-**You have one week to submit your solution.**
 Write me (Nicholas) an email or a message on LinkedIn/Join when you have completed the project, I will review it afterwards.
 
 **Have fun building!** 🚀
