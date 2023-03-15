@@ -13,15 +13,71 @@ img {
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #202D36;
   color: white;
 }
 
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2b3743;
+  padding: 10px 20px;
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.filter .form-control {
+  width: 100%;
+}
+
+.filter .form-control input {
+  background-color: #2b3743;
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  font-family: inherit;
+  letter-spacing: 1.5px;
+  width: 100%;
+  margin: 0 0 30px;
+}
+
+.filter .form-control input::placeholder {
+  color: white;
+}
+
+.filter .filter-region .select {
+  background-color: #2b3743;
+  color: white;
+  font-family: inherit;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
+  padding: 20px;
+}
+
+.grid .card {
+  box-shadow: 0 10px 10px rgba(9, 17, 22, 0.5);
 }
 
 .grid .details { 
@@ -55,14 +111,36 @@ body {
 }
 
 @media (min-width: 768px) {
+  .filter {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .filter .form-control {
+    width: auto;
+  }
+
+  .filter .form-control input {
+    width: auto;
+    margin: 0;
+  }
+
+
+  .filter .filter-region {
+    width: auto;
+  }
+
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 992px) {
+  .header, .filter, .grid {
+    padding: 20px 100px;
+  }
   .grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
   }
 }
 
