@@ -20,18 +20,19 @@ const Countries = () => {
 
     return (
         <>
+        <section className='grid'>
         {countries.map((country) => {
-            const { altSpellings, flags, population, region, capital, name } = country
+            const { flags, population, region, capital, name, ccn3 } = country
             return (
-                <article>
+                <article key={ccn3}>
                   <div className="flag">
-                    <img src={flags.svg} alt={altSpellings[1]} />
+                    <img src={flags.svg} alt={name.common} />
                   </div>
                   <div className="details">
-                    <h4 className="country-name">
-                      Name: <span>{name.common}</span>
+                    <h3 className="country-name">
+                     <span>{name.common}</span>
 
-                    </h4>
+                    </h3>
                     <h4>
                       Population: <span>{population.toLocaleString()}</span>
                     </h4>
@@ -45,6 +46,7 @@ const Countries = () => {
                 </article>
             )
         })}
+        </section>
         </>
     )
 }
