@@ -21,7 +21,7 @@ const Countries = () => {
     return (
         <>
         {countries.map((country) => {
-            const { altSpellings, flags, population, region, capital } = country
+            const { altSpellings, flags, population, region, capital, name } = country
             return (
                 <article>
                   <div className="flag">
@@ -29,7 +29,8 @@ const Countries = () => {
                   </div>
                   <div className="details">
                     <h4 className="country-name">
-                      Name: <span>{altSpellings[1]}</span>
+                      Name: <span>{name.common}</span>
+
                     </h4>
                     <h4>
                       Population: <span>{population.toLocaleString()}</span>
