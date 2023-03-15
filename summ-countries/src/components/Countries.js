@@ -21,15 +21,15 @@ const Countries = () => {
     return (
         <>
         {countries.map((country) => {
-            const { common, flags, population, region, capital } = country
+            const { altSpellings, flags, population, region, capital } = country
             return (
                 <article>
                   <div className="flag">
-                    <img src={flags.svg} alt={common} />
+                    <img src={flags.svg} alt={altSpellings[1]} />
                   </div>
                   <div className="details">
                     <h4 className="country-name">
-                      Name: <span>{common}</span>
+                      Name: <span>{altSpellings[1]}</span>
                     </h4>
                     <h4>
                       Population: <span>{population.toLocaleString()}</span>
