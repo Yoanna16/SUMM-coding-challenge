@@ -1,30 +1,92 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const Country = () => {
-    const [country, setCoutry] = useState([]);
+  const [country, setCountry] = useState([]);
 
-    const { name } = useParams()
+  const { name } = useParams();
 
+  useEffect(() => {
+    const getSingleCountry = async () => {
+      try {
+        const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+        const data = await res.json();
+        setCountry(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    useEffect(() => {
-        const fetchCountyData = async () => {
-            const response = await fetch(
-                `https://restcountries.eu/rest/v2/name/${name}`
-              )
-              const country = await response.json()
-              setCoutry(country)
-        }
-        fetchCountyData()
-        }, [name])
+    getSingleCountry();
+  }, [name]);
+
   return (
     <>
-    <Link to='/' className="btn btn-light">
-        <i className='fas fa-arrow-left'>Back Home</i>
-    </Link>
-      <h1>Country Data</h1>
-    </>
-  )
-}
+      <Link to="/" className="btn btn-light">
+        <i className="fas fa-arrow-left">Back Home</i>
+      </Link>
+      <section className="country">
+        {country.map((c) => {
+          const {
+            ccn3,
+            flags,
+            name,
+            population,
+            region,
+            subregion,
+            capital,
+            tld,
+            currencies,
+            languages,
+            borders,
+          } = c;
+          return (
+            <article key={ccn3}>
+              <div className="country-inner">
+                <div className="flag">
+                  <img src={flags.svg} alt={name.common} />
+                </div>
 
-export default Country
+                <div className="country-details">
+                  <div>
+                    <h2>{name.common}</h2>
+                    <h5>
+                      Native Name: <span>{name.official}</span>
+                    </h5>
+                    <h5>
+                      Population: <span>{population.toLocaleString()}</span>
+                    </h5>
+                    <h5>
+                      Region: <span>{region}</span>
+                    </h5>
+                    <h5>
+                      Sub Region: <span>{subregion}</span>
+                    </h5>
+                    <h5>
+                      Capital: <span>{capital[0]}</span>{" "}
+                    </h5>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3>Border Countries: </h3>
+                <div className="borders">
+                  {borders.map((border) => {
+                    return (
+                      <ul key={border}>
+                        <li>{border}</li>
+                      </ul>
+                    )
+                  })}
+                </div>
+              </div>
+            </article>
+          )
+        })}
+      </section>
+    </>
+  );
+};
+
+export default Country;

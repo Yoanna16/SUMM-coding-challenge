@@ -28,7 +28,7 @@ const Countries = () => {
         <>
         <section className='grid'>
         {countries.map((country) => {
-            const { flags, population, region, capital, name, ccn3 } = country
+            const { flags, population, region, capital, name, ccn3 } = country;
             return (
                 <article key={ccn3} className='card'>
                   <div className="flag">
@@ -48,7 +48,7 @@ const Countries = () => {
                     <h4>
                       Capital: <span>{capital}</span>
                     </h4>
-                    <Link className='btn' to={`/countries/${name.common}`}> Learn More</Link>
+                    <Link className='btn' to={`/${name.common}`}> Learn More</Link>
                   </div>
                 </article>
             )

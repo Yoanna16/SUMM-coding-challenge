@@ -13,7 +13,7 @@ function App() {
        <Filter/>
        <Routes>
        <Route exact path='/' element={<Countries/>}/>
-       <Route path='/countries/:name' element={<Country />}/>
+       <Route path='/:name' element={<Country />}/>
      </Routes>
       </>
     </Router>
