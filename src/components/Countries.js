@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const url = "https://restcountries.com/v3.1/all"
 
@@ -16,6 +17,11 @@ const Countries = () => {
         }
         fetchCountryData();
     }, [])
+
+/*     const removeCountry = (ccn3) => {
+      const newCountry = countries.filter((country) => country.ccn3 !== ccn3)
+      setCountries(newCountry);
+    } */
 
 
     return (
@@ -42,6 +48,7 @@ const Countries = () => {
                     <h4>
                       Capital: <span>{capital}</span>
                     </h4>
+                    <Link className='btn' to={`/countries/${name.common}`}> Learn More</Link>
                   </div>
                 </article>
             )
