@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import '../country.css';
 
 const Country = () => {
   const [country, setCountry] = useState([]);
@@ -22,10 +23,10 @@ const Country = () => {
 
   return (
     <>
+    <section className="country">
       <Link to="/" className="btn btn-light">
         <i className="fas fa-arrow-left">Back Home</i>
       </Link>
-      <section className="country">
         {country.map((c) => {
           const {
             ccn3,
@@ -63,10 +64,7 @@ const Country = () => {
                       Capital: <span>{capital[0]}</span>{" "}
                     </h5>
                   </div>
-                </div>
-              </div>
-
-              <div>
+                  <div>
                 <h3>Border Countries: </h3>
                 <div className="borders">
                   {borders.map((border) => {
@@ -76,6 +74,8 @@ const Country = () => {
                       </ul>
                     )
                   })}
+                </div>
+              </div>
                 </div>
               </div>
             </article>
