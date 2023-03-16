@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+:root {
+  --dark-bg-color: hsl(207, 26%, 17%);
+  --article-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 52%);
+  --light-mode-background: hsl(0, 0%, 98%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +21,11 @@ img {
 
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  /* padding: 20px; */
-  background-color: #202D36;
-  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;  /* padding: 20px; */
+  background-color: var(--dark-bg-color);
+  color: var(--text-color);
 }
 
 /* Header */
@@ -23,10 +33,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2b3743;
+  background-color: var(--article-color);
   padding: 10px 20px;
 }
 
+.fas, .fa-moon {
+  padding: 5px;
+}
+.header i {
+  cursor: pointer;
+}
+
+
+.btn {
+  background-color: var(--dark-bg-color);
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  color: #fff;
+  border: 2px solid var(--dark-bg-color);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: var(--dark-bg-color);
+}
+
+.btn-light {
+  background-color: var(--article-color);
+  border: 2px solid var(--article-color);
+}
 /* Filter */
 .filter {
   display: flex;
@@ -40,7 +81,7 @@ body {
 }
 
 .filter .form-control input {
-  background-color: #2b3743;
+  background-color: var(--article-color);
   border: none;
   outline: none;
   padding: 12px;
@@ -57,7 +98,7 @@ body {
 }
 
 .filter .filter-region .select {
-  background-color: #2b3743;
+  background-color: var(--article-color);
   color: white;
   font-family: inherit;
   padding: 12px;
@@ -81,10 +122,14 @@ body {
 }
 
 .grid .details { 
-  background-color: #2b3743;
+  background-color: var(--article-color);
   padding: 40px 20px;
   margin-top: -20px;
   border-radius: 0 0 5px 5px;
+}
+
+.details:hover {
+  background-color: var(--dark-bg-color);
 }
 
 .grid article img {
