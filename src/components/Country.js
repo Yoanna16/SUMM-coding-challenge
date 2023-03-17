@@ -10,9 +10,10 @@ const Country = () => {
   useEffect(() => {
     const getSingleCountry = async () => {
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+        const res = await fetch(`https://restcountries.com/v3.1/name/${name.toLowerCase()}`);
         const data = await res.json();
         setCountry(data);
+        console.log(data)
       } catch (error) {
         console.error(error);
       }

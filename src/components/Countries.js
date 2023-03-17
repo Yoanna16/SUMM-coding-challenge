@@ -38,7 +38,7 @@ const Countries = () => {
         {filtered.map((country) => {
             const { flags, population, region, capital, name, ccn3 } = country;
             return (
-              <Link className='card-btn' to={`/${name.common.toLowerCase()}`}>
+              <Link className='card-btn' to={`/${name.common}`}>
                 <article key={ccn3} className='card'>
                   <div className="flag">
                     <img src={flags.svg} alt={name.common} />
@@ -67,7 +67,7 @@ const Countries = () => {
       {countries.map((country) => {
           const { flags, population, region, capital, name, ccn3 } = country;
           return (
-            <Link className='card-btn' to={`/${name.common.toLowerCase()}`}>
+            <Link className='card-btn' to={`/${name.common}`}>
               <article key={ccn3} className='card'>
                 <div className="flag">
                   <img src={flags.svg} alt={name.common} />
